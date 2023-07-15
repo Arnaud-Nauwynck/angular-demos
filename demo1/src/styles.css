@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*
+redundant if already in angular.json
+@import "bootstrap/dist/css/bootstrap.css"
+*/
+
+
+.app-border1 {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}

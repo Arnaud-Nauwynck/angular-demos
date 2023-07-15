@@ -1,0 +1,67 @@
+
+<!--
+demo2-ngfor
+-->
+
+<!--
+demo2-todolist-hardcoded
+-->
+<div class="container">
+  <div class="row">
+    <label class="col-md-1">To do</label>
+    <label class="col-md-1">Priority: </label>
+    <span class="col-md-1">1</span>
+    <label class="col-md-1">Description: </label>
+    <span class="col-md-8">Learn TypeScript</span>
+  </div>
+  <div class="row">
+    <label class="col-md-1">To do</label>
+    <label class="col-md-1">Priority: </label>
+    <span class="col-md-1">2</span>
+    <label class="col-md-1">Description: </label>
+    <span class="col-md-8">Learn Angular</span>
+  </div>
+  <div class="row">
+    <label class="col-md-1">To do</label>
+    <label class="col-md-1">Priority: </label>
+    <span class="col-md-1">1</span>
+    <label class="col-md-1">Description: </label>
+    <span class="col-md-8">Learn Http</span>
+  </div>
+
+</div>
+
+
+<!--
+demo2-todoitem1-interpol
+-->
+<div class="container">
+  <div class="row">
+    <label class="col-md-1">To do</label>
+    <label class="col-md-1">Priority: </label>
+    <span class="col-md-1">{{item1.priority}}</span>
+    <label class="col-md-1">Description: </label>
+    <span class="col-md-8">{{item1.description}}</span>
+  </div>
+</div>
+
+<!--
+demo2-ngfor-texts
+-->
+<li *ngFor="let todoDescription of todoDescriptions">
+  {{todoDescription}}
+</li>
+
+<!--
+demo2-ngfor-todoItems
+-->
+<div class="container">
+  <div class="row" *ngFor="let item of items">
+    <label class="col-md-1">To do</label>
+    <label class="col-md-1">Priority: </label>
+    <span class="col-md-1">{{item.priority}}</span>
+    <label class="col-md-1">Description: </label>
+    <span class="col-md-8">{{item.description}}</span>
+  </div>
+</div>
+

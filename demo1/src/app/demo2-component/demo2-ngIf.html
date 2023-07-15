@@ -1,0 +1,54 @@
+
+<!--
+demo2-ngif
+-->
+
+
+<!--
+demo2-ngif-1
+-->
+<H2>demo showing *ngIf</H2>
+
+<div *ngIf="condition">
+  <div>content when true</div>
+</div>
+
+<!--
+demo2-ngif-2
+-->
+<H2>demo showing *ngIf using !condition</H2>
+
+<div *ngIf="!condition">
+  <div>content when false</div>
+</div>
+
+<!--
+demo2-ngif-3
+-->
+<H2>demo showing *ngIf with else ng-template #templateId </H2>
+
+<div *ngIf="condition; else templateWhenFalse">
+  <div>content when true</div>
+</div>
+<ng-template #templateWhenFalse>
+  <div>content when false</div>
+</ng-template>
+
+<!--
+demo2-ngif-4
+-->
+<H2> Button to toggle model condition </H2>
+
+<button (click)="condition = !condition">Toggle condition</button>
+condition = {{condition}}
+
+<!--
+demo2-ngif-5
+-->
+<H2>demo showing ng-container: no extra div or span inserted </H2>
+
+<span>
+  <ng-container *ngIf="condition">
+    content when true
+  </ng-container>
+</span>
