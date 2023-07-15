@@ -13,12 +13,16 @@ interface TodoItem {
 export class AppComponent {
   title = 'demo1';
 
-  public isCollapsed = true;
-  public isMenuCollapsed = false;
+  value1 = "text1";
+  value2 = "text2";
 
-  todoDescriptions = [ "Learn TypeScript", "Learn Angular", "Learn Http"];
+  intValue2 = 123;
 
-  item1: TodoItem = { priority: 1, description: 'learn TypeScript' };
+
+
+
+
+
 
   items: TodoItem[] = [
     { priority: 1, description: 'learn TypeScript' },
@@ -26,6 +30,14 @@ export class AppComponent {
     { priority: 1, description: 'learn Http' },
     ];
 
+
   condition = true;
 
+  public isCollapsed = true;
+  public isMenuCollapsed = false;
+
+  todoDescriptions = [ "Learn TypeScript", "Learn Angular", "Learn Http"];
+
+  item1: TodoItem = { priority: 1, description: 'learn TypeScript' };
 }
+

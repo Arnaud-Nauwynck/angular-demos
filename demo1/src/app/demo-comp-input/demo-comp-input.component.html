@@ -1,0 +1,42 @@
+
+<H2>Passing value from parent to child component: <code ngNonBindable>[childField]="parentValue"</code></H2>
+
+change *child.component.ts to declare @Input field
+<PRE><code ngNonBindable>
+  import &#123; Component, Input &#125; from '@angular/core';
+
+  ..
+
+    @Input()
+    field: string = '';
+</code><PRE>
+
+change *child.component.html to use field
+<PRE><code ngNonBindable>
+  <p>child component, field: &#123;&#123;field &#125;&#125;</p>
+</code></PRE>
+
+
+comp using field set to parent 'parentValue1' expression:
+  <br>
+  parentValue1: {{parentValue1}}
+  <app-demo-comp-input-child [field]="parentValue1">
+  </app-demo-comp-input-child>
+
+comp using field set to parent 'parentValue2' expression:
+  <br>
+  parentValue2: {{parentValue2}}
+  <br>
+
+  <app-demo-comp-input-child [field]="parentValue2"></app-demo-comp-input-child>
+  <br>
+
+
+comp without field set:
+<app-demo-comp-input-child></app-demo-comp-input-child>
+  <br>
+
+comp with field set to constant text:
+<app-demo-comp-input-child [field]="'constant text'"></app-demo-comp-input-child>
+  <br>
+

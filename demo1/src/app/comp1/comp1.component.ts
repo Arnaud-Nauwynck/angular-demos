@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-comp1',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./comp1.component.css']
 })
 export class Comp1Component {
+
+  @Input()
+  comp1Field: string = '';
 
 }
