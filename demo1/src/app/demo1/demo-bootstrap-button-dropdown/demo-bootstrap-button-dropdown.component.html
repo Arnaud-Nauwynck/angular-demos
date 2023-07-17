@@ -1,0 +1,59 @@
+<p>demo-bootstrap-button-dropdown works!</p>
+
+<A href="https://getbootstrap.com/docs/5.0/components/dropdowns/">https://getbootstrap.com/docs/5.0/components/dropdowns/</A>
+
+Dropdown button... native class / javascript does not work?!..
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button"
+          id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+
+
+rewritten using ng-bootstrap:
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"> data-bs-toggle="dropdown" </div>
+    <div class="col-md-1"> --&gt; </div>
+    <div class="col-md-2"> ngbDropdown </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"> class="dropdown-toggle" </div>
+    <div class="col-md-1"> --&gt; </div>
+    <div class="col-md-2"> ngbDropdownToggle </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"> class="dropdown-menu" </div>
+    <div class="col-md-1"> --&gt; </div>
+    <div class="col-md-2"> ngbDropdownMenu </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3"> class="dropdown-item" </div>
+    <div class="col-md-1"> --&gt; </div>
+    <div class="col-md-2"> ngbDropdownItem </div>
+  </div>
+</div>
+
+<br>
+https://ng-bootstrap.github.io/#/components/dropdown/examples
+<br>
+
+<div ngbDropdown class="d-inline-block">
+  <button type="button" class="btn btn-secondary"
+          id="dropdownMenuButton2" ngbDropdownToggle>
+    Toggle dropdown
+  </button>
+  <ul ngbDropdownMenu aria-labelledby="dropdownMenuButton2">
+    <li><a ngbDropdownItem href="#">Action</a></li>
+    <li><a ngbDropdownItem href="#">Another action</a></li>
+    <li><a ngbDropdownItem href="#">Something else here</a></li>
+  </ul>
+</div>
+

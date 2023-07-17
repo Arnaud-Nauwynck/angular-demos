@@ -1,0 +1,81 @@
+<H2>Demo template <code ngNonBindable>&#123;&#123; expression &#125;&#125;</code></H2>
+
+<H3>Code</H3>
+
+change component.ts to declare fields with text, number, boolean object
+
+<PRE><code ngNonBindable>
+  value1Text = "text1";<br>
+  value2Text = "text2";<br>
+  value1Number = 123;<br>
+  value2Number = 3.1415;<br>
+  value1Bool = true;<br>
+  value2Bool = false;<br>
+  value1Obj = &#123; text: "objectText1", fieldInt: 1 &#125;;<br>
+</code></PRE>
+
+change component.html to use fields as interpolated expressions
+<PRE><code ngNonBindable>
+  <p>value1Text: &#123;&#123;value1Text&#125;&#125;</p>
+  <p>value1Text + value2Text: &#123;&#123;value1Text + value2Text &#125;&#125;</p>
+</code></PRE>
+
+
+<H3>Result</H3>
+
+value1Text: {{ value1Text }}
+
+<!--
+fieldNotFound:  fieldNotFound
+-->
+
+<H3>More complex expressions</H3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ value1Text }}</code> </div>
+    <div class="col-md-6"> {{ value1Text }} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ value1Number }}</code> </div>
+    <div class="col-md-6"> {{ value1Number}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ value1Text + value2Text }}</code>  </div>
+    <div class="col-md-6"> {{ value1Text + value2Text}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ value1Number + value2Number }}</code>  </div>
+    <div class="col-md-6"> {{ value1Number + value2Number}} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ value1Text + ' concatenate ' + value1Number }}</code> </div>
+    <div class="col-md-6"> {{ value1Text + ' concatenate ' + value1Number }} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ (value1Number > 10)? '>10' : '<10' }}</code> </div>
+    <div class="col-md-6"> {{ (value1Number > 10)? '>10' : '<10' }} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ value1Obj.text }}</code>  </div>
+    <div class="col-md-6"> {{ value1Obj.text }} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ value1Getter }}</code> </div>
+    <div class="col-md-6"> {{ value1Getter }} </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"> <code ngNonBindable> {{ function1() }}</code> </div>
+    <div class="col-md-6"> {{ function1() }} </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">change field values</div>
+  </div>
+  <div class="row">
+    <label class="col-md-3" for="value1Text">value1Text: </label>
+    <input class="col-md-5" type="text" id="value1Text" [(ngModel)]="value1Text">
+  </div>
+
+</div>
+

@@ -20,8 +20,10 @@ change *child.component.html to use field
 comp using field set to parent 'parentValue1' expression:
   <br>
   parentValue1: {{parentValue1}}
-  <app-demo-comp-input-child [field]="parentValue1">
-  </app-demo-comp-input-child>
+
+  <app-demo-comp-input-child
+      [field]="parentValue1"
+      ></app-demo-comp-input-child>
 
 comp using field set to parent 'parentValue2' expression:
   <br>

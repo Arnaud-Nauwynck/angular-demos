@@ -1,0 +1,23 @@
+<p>page3 works!</p>
+
+
+initialId: {{initialId}}
+<br>
+
+currentId: {{currentId}}
+<br>
+
+
+change value => sync param
+<input type="text" [(ngModel)]="value" (ngModelChange)="onChangeValue()">
+<br>
+
+
+change value (then click on apply)
+<input type="text" [(ngModel)]="value">
+<button type="button" class="btn btn-info" (click)="onClickChangeParam()">Apply param</button>
+<br>
+
+Click to switch to page3
+<button type="button" class="btn btn-info" (click)="onClickGotoPage2()">Go to page2</button>
+<br>

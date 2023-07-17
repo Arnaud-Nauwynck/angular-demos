@@ -1,2 +1,58 @@
 
+<!--
 <app-demo-comp-input></app-demo-comp-input>
+<app-demo2-interpolation></app-demo2-interpolation>
+<app-ng-if-comp></app-ng-if-comp>
+
+<app-mycomp></app-mycomp>
+<app-demo-comp-output></app-demo-comp-output>
+
+<app-demo2-bidirectionbinding></app-demo2-bidirectionbinding>
+
+-->
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li ngbDropdown class="nav-item">
+      <a ngbDropdownToggle id="navbarMenuDemo1" class="nav-link" role="button">
+        Demo 1
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarMenuDemo1" class="dropdown-menu" >
+        <a class="dropdown-item" routerLink="/demo1/demo-bootstrap-column">Bootstrap 12 columns</a>
+        <a class="dropdown-item" routerLink="/demo1/demo-bootstrap-carousel">Bootstrap Carousel</a>
+        <a class="dropdown-item" routerLink="/demo1/demo-bootstrap-button">Bootstrap Button</a>
+        <a class="dropdown-item" routerLink="/demo1/demo-bootstrap-button-dropdown">Bootstrap Button Dropdown (native)</a>
+        <a class="dropdown-item" routerLink="/demo1/demo-bootstrap-navtab">Bootstrap Nav Tabulation</a>
+      </div>
+    </li>
+    <li ngbDropdown class="nav-item">
+      <a ngbDropdownToggle id="navbarMenu1" class="nav-link" role="button">
+        Pages
+      </a>
+      <div ngbDropdownMenu aria-labelledby="navbarMenu1" class="dropdown-menu" >
+        <a class="dropdown-item" routerLink="/page1">Page 1</a>
+        <a class="dropdown-item" routerLink="/page2">Page 2</a>
+        <a class="dropdown-item" routerLink="/page3">Page 3 (error no id)</a>
+        <a class="dropdown-item" routerLink="/page3/123">Page 3 id:123</a>
+        <a class="dropdown-item" routerLink="/page3/234">Page 3 id:234</a>
+        <a class="dropdown-item" routerLink="/page4">Page 4 (storeService) </a>
+        <a class="dropdown-item" routerLink="/page5">Page 5 (storeService) </a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/page1">Page 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/page2">Page 2</a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
