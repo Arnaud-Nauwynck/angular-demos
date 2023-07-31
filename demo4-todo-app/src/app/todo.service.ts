@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { TodoModel } from './model/todo';
+import { HttpClient } from '@angular/common/http';
+
+import { TodoModel, Todo } from './model/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +14,16 @@ export class TodoService {
     new TodoModel(3, "learn http", 1),
   ];
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
     console.log('TodoService.constructor()');
+
+    console.log('Calling http GET /api/todo ... subscribe to async response');
+    this.httpClient.get<Todo[]>('/api/todo').subscribe(resp => {
+      console.log('Finished http GET /api/todo', resp);
+      this.todos = resp.map(dto => new TodoModel(dto.id, dto.description, dto.priority));
+    }, err => {
+      console.log('Failed http GET /api/todo', err);
+    });
   }
 
   findById(id: number): TodoModel|undefined {

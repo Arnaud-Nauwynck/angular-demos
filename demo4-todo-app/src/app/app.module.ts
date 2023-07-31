@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,17 +13,11 @@ import { TodoDetailPageComponent } from './todo-detail-page/todo-detail-page.com
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TodoListPageComponent,
-    TodoCreateSimpleComponent,
-    TodoUpdateSimpleComponent,
-    TodoDetailPageComponent
+    AppComponent, TodoListPageComponent, TodoCreateSimpleComponent, TodoUpdateSimpleComponent, TodoDetailPageComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule
+    BrowserModule, AppRoutingModule, NgbModule, FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

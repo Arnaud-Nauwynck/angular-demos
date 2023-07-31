@@ -61,10 +61,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "demo4-todo-app:build:production"
+              "browserTarget": "demo4-todo-app:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "browserTarget": "demo4-todo-app:build:development"
+              "browserTarget": "demo4-todo-app:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
