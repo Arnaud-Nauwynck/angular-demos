@@ -4,7 +4,6 @@
   <li *ngFor="let todo of todos; index as idx">
     ({{todo.id}}) {{todo.description}} {{todo.priority}}
 
-    <!--
     <button type="button" class="btn btn-outline-info"
             (click)="duplicateTodo(todo, idx)">Duplicate</button>
 
@@ -13,7 +12,6 @@
 
     <button type="button" class="btn btn-outline-info"
             (click)="onClickOpenDetail(todo)">Detail...</button>
--->
   </li>
 </ul>
 

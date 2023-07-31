@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { TodoModel } from '../model/todo';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-detail-page',
@@ -12,9 +13,10 @@ export class TodoDetailPageComponent {
   id: number = 0;
   todo: TodoModel|undefined = undefined;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private todoService: TodoService,
+              private activatedRoute: ActivatedRoute) {
     this.id = +activatedRoute.snapshot.params['id'];
-    // cf next: load from id ...  this.todo = data;
+    this.todo = this.todoService.findById(this.id);
   }
 }
 

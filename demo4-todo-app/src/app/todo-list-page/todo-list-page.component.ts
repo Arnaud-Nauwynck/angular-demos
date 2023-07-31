@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Todo, TodoModel } from '../model/todo';
+import { TodoModel } from '../model/todo';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-list-page',
@@ -8,23 +9,27 @@ import { Todo, TodoModel } from '../model/todo';
 })
 export class TodoListPageComponent {
 
-  todos: TodoModel[] = [
-    new TodoModel(1, "learn angular", 1),
-    new TodoModel(2, "learn typescript", 1),
-    new TodoModel(3, "learn http", 1),
-  ];
+  constructor(private todoService: TodoService,
+              private router: Router) {
+    console.log('TodoListPageComponent.constructor()');
+  }
 
-  constructor(private router: Router) {}
+  ngOnInit() {
+    console.log('TodoListPageComponent.ngOnInit()');
+  }
+
+  ngOnDestroy() {
+    console.log('TodoListPageComponent.ngOnDestroy()');
+  }
+
+  get todos(): TodoModel[] { return this.todoService.todos; }
 
   duplicateTodo(item: TodoModel, idx: number) {
-    let newId = this.todos.length + 1;
-    let dupItem = new TodoModel(newId, item.description + ' (copy)',
-                                item.priority+1);
-    this.todos.push(dupItem);
+    this.todoService.duplicateTodo(item, idx);
   }
 
   deleteTodo(item: TodoModel, idx: number) {
-    this.todos.splice(idx, 1);
+    this.todoService.deleteTodo(item, idx);
   }
 
   onClickOpenDetail(item: TodoModel) {
