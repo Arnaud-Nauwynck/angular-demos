@@ -1,0 +1,31 @@
+<H1>Todo list</H1>
+
+<ul>
+  <li *ngFor="let todo of todos; index as idx">
+    ({{todo.id}}) {{todo.description}} {{todo.priority}}
+
+    <!--
+    <button type="button" class="btn btn-outline-info"
+            (click)="duplicateTodo(todo, idx)">Duplicate</button>
+
+    <button type="button" class="btn btn-outline-info"
+            (click)="deleteTodo(todo, idx)">Delete</button>
+
+    <button type="button" class="btn btn-outline-info"
+            (click)="onClickOpenDetail(todo)">Detail...</button>
+-->
+  </li>
+</ul>
+
+
+<div class="container">
+  <div class="row">
+    <label class="col-md-4">New using link or button</label>
+    <div class="col-md-2">
+      <A routerLink="/new-todo">New ...</A>
+    </div>
+    <div class="col-md-2">
+      <button type="button" class="btn btn-outline-info" routerLink="/new-todo">New ...</button>
+    </div>
+  </div>
+</div>

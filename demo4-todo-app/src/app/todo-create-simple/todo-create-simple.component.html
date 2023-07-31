@@ -1,0 +1,19 @@
+<H1>Create TODO</H1>
+
+<div class="container">
+  <div class="row">
+    <label for="description" class="col-md-3">Description</label>
+    <input id="description" class="col-md-5" type="text" [(ngModel)]="todo.description">
+  </div>
+  <div class="row">
+    <label for="priority" class="col-md-3">Priority</label>
+    <input id="priority" class="col-md-5" type="number" [(ngModel)]="todo.priority">
+  </div>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <button type="button" class="btn btn-outline-info"
+              (click)="onClickNew()">New</button>
+    </div>
+  </div>
+</div>

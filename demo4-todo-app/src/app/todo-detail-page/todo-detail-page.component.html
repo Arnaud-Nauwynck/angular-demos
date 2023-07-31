@@ -1,0 +1,19 @@
+<H1>Todo ({{id}}) </H1>
+
+<div *ngIf="todo" class="container">
+  <div class="row">
+    <label class="col-md-3">Description</label>
+    <span class="col-md-5">{{todo.description}}</span>
+  </div>
+  <div class="row">
+    <label class="col-md-3">Priority</label>
+    <span class="col-md-5">{{todo.priority}}</span>
+  </div>
+</div>
+
+<div *ngIf="!todo">
+  Content not loaded yet for id: {{id}}
+</div>
+
+<A routerLink="/todos">Todo List page</A>
+
